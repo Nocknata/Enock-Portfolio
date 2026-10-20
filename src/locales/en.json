@@ -1,0 +1,19 @@
+
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "hero": {
+    "label": "DATA SCIENCE • MACHINE LEARNING • HEALTHCARE ANALYTICS",
+    "greeting": "Hi, I'm",
+    "subtitle": "Data Science & Analytics Major | Public Health Minor",
+    "description": "I'm pursuing a Bachelor of Science in Data Science and Analytics at Kennesaw State University, with a minor in Public Health. I apply statistical analysis, machine learning, and data visualization to uncover insights, build predictive models, and solve real-world problems. My interests include healthcare analytics, predictive modeling, and developing data-driven solutions that support better decision-making.",
+    "projectsButton": "View My Projects",
+    "contactButton": "Contact Me"
+  }
+}

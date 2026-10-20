@@ -1,0 +1,20 @@
+
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "projects": "Projets",
+    "skills": "Compétences",
+    "experience": "Expérience",
+    "contact": "Contact"
+  },
+  "hero": {
+    "label": "SCIENCE DES DONNÉES • APPRENTISSAGE AUTOMATIQUE • ANALYSE DES DONNÉES DE SANTÉ",
+    "greeting": "Bonjour, je suis",
+    "subtitle": "Licence en science et analyse des données | Mineure en santé publique",
+    "description": "Je prépare un Bachelor of Science en science et analyse des données à Kennesaw State University, avec une mineure en santé publique. J'utilise l'analyse statistique, l'apprentissage automatique et la visualisation des données pour dégager des informations pertinentes, développer des modèles prédictifs et résoudre des problèmes concrets. Je m'intéresse particulièrement à l'analyse des données de santé, à la modélisation prédictive et aux solutions fondées sur les données pour améliorer la prise de décision.",
+    "projectsButton": "Voir mes projets",
+    "contactButton": "Me contacter"
+  }
+}
+

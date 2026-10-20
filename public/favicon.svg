@@ -1,0 +1,40 @@
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 64 64"
+>
+  <rect
+    width="64"
+    height="64"
+    rx="15"
+    fill="#0D1B30"
+  />
+
+  <rect
+    x="2"
+    y="2"
+    width="60"
+    height="60"
+    rx="13"
+    fill="none"
+    stroke="#34527A"
+    stroke-width="2"
+  />
+
+  <text
+    x="8"
+    y="43"
+    font-family="Arial, sans-serif"
+    font-size="31"
+    font-weight="900"
+    letter-spacing="-2"
+    fill="#FFFFFF"
+  >EK</text>
+
+  <circle
+    cx="54"
+    cy="42"
+    r="4"
+    fill="#60A5FA"
+  />
+</svg>
