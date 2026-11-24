@@ -10,11 +10,7 @@ import { Routes, Route } from "react-router-dom";
 
 import "./App.css";
 
-// ==========================================
-// PUBLIC HOMEPAGE COMPONENTS
-// These load normally with the homepage.
-// ==========================================
-
+// PUBLIC HOMEPAGE
 import Navbar from "./components/Navbar1";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -23,34 +19,27 @@ import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 
-// ==========================================
 // LAZY-LOADED PAGES
-// These load only when needed.
-// ==========================================
-
-// Public project case studies
 const ProjectDetails = lazy(() =>
   import("./components/ProjectDetails")
 );
 
-// Admin login
 const AdminLogin = lazy(() =>
   import("./admin/AdminLogin")
 );
 
-// Protected admin route
 const ProtectedRoute = lazy(() =>
   import("./admin/ProtectedRoute")
 );
 
-// Admin dashboard
 const AdminDashboard = lazy(() =>
   import("./admin/AdminDashboard")
 );
 
-// ==========================================
-// LOADING FALLBACK
-// ==========================================
+// NEW: PASSWORD RECOVERY
+const PasswordRecovery = lazy(() =>
+  import("./admin/PasswordRecovery")
+);
 
 function PageLoading() {
   return (
@@ -70,33 +59,20 @@ function PageLoading() {
   );
 }
 
-// ==========================================
-// MAIN APPLICATION
-// ==========================================
-
 function App() {
-  // THEME STATE
   const [theme, setTheme] = useState(() => {
-    return (
-      localStorage.getItem("portfolio-theme") ||
-      "dark"
-    );
+    return localStorage.getItem("portfolio-theme") || "dark";
   });
 
-  // SAVE THEME
   useEffect(() => {
     document.documentElement.setAttribute(
       "data-theme",
       theme
     );
 
-    localStorage.setItem(
-      "portfolio-theme",
-      theme
-    );
+    localStorage.setItem("portfolio-theme", theme);
   }, [theme]);
 
-  // SWITCH DARK / LIGHT MODE
   function toggleTheme() {
     setTheme((current) =>
       current === "dark" ? "light" : "dark"
@@ -106,15 +82,11 @@ function App() {
   return (
     <Routes>
 
-      {/* ====================================
-          PUBLIC HOMEPAGE
-          ==================================== */}
-
+      {/* PUBLIC HOMEPAGE */}
       <Route
         path="/"
         element={
           <div className="app">
-
             <Navbar
               theme={theme}
               toggleTheme={toggleTheme}
@@ -128,15 +100,11 @@ function App() {
               <Experience />
               <Contact />
             </main>
-
           </div>
         }
       />
 
-      {/* ====================================
-          PROJECT CASE STUDIES
-          ==================================== */}
-
+      {/* PROJECT CASE STUDIES */}
       <Route
         path="/projects/:id"
         element={
@@ -146,10 +114,7 @@ function App() {
         }
       />
 
-      {/* ====================================
-          ADMIN LOGIN
-          ==================================== */}
-
+      {/* ADMIN LOGIN */}
       <Route
         path="/admin/login"
         element={
@@ -159,10 +124,27 @@ function App() {
         }
       />
 
-      {/* ====================================
-          PROTECTED ADMIN DASHBOARD
-          ==================================== */}
+      {/* FORGOT PASSWORD */}
+      <Route
+        path="/admin/forgot-password"
+        element={
+          <Suspense fallback={<PageLoading />}>
+            <PasswordRecovery />
+          </Suspense>
+        }
+      />
 
+      {/* RESET PASSWORD */}
+      <Route
+        path="/admin/reset-password"
+        element={
+          <Suspense fallback={<PageLoading />}>
+            <PasswordRecovery />
+          </Suspense>
+        }
+      />
+
+      {/* PROTECTED ADMIN DASHBOARD */}
       <Route
         path="/admin"
         element={
